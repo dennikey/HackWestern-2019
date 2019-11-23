@@ -1,33 +1,14 @@
+var slideIndex = 0;
+showSlides();
 
-var chinaSequence = 0;
-var chinaSlides = document.getElementsByClassName('carousel-item');
-console.log("ran");
-
-//General
-function showSlide(slides, slideNumber){
-    for(counter = 0; counter < slides.length; counter++){
-        slides[counter].style.display ="none"
-    }
-    slides[slideNumber].style.display = "block";
-}
-
-//Graduation
-showSlide(chinaSlides, chinaSequence);
-
-function titleIncreaseOne(){
-    if (chinaSequence + 1 < chinaSlides.length){
-        showSlide(chinaSlides, chinaSequence+=1);
-    }
-    else{
-        showSlide(chinaSlides, chinaSequence=0);
-    }
-}
-
-function titleDecreaseOne(){
-    if(chinaSequence - 1 > -1){
-        showSlide(chinaSlides, chinaSequence-=1)
-    }
-    else{
-        showSlide(chinaSlides, chinaSequence = chinaSlides.length-1);
-    }
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("carousel-piece");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
 }
