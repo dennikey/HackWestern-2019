@@ -177,15 +177,42 @@ var objectData = findObject(collectionRef);
             </div> 
             </div>
 
-        </form>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send</button>
+        <button type="button" class="btn btn-primary"onclick="myFunction2()">Send</button>
       </div>
+
+    </form>
     </div>
   </div>
 </div>
+
+<script>
+    $('#ApplyForm').submit(function (e) {
+        e.preventDefault();
+        console.log("hello world");
+    })
+    function myFunction2(e) {
+        // e.preventDefault();
+        console.log("In my function");
+        
+db.collection("apply").add({
+    ApplyEmail: document.getElementById("ApplyEmail").value,
+    ApplyCoverLetter: document.getElementById("ApplyCoverLetter").value,
+    ApplyResume: document.getElementById("ApplyResume").value,
+    ApplyOtherInformation: document.getElementById("ApplyOtherInformation").value,
+})
+.then(function() {
+    console.log("Document successfully written!");
+})
+.catch(function(error) {
+    console.log("Error writing document: ", error);
+});
+console.log("After db call");
+    }
+</script>
 
  <!-- Bottom Navigation -->
  <div class="botNav">
