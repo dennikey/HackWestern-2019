@@ -50,28 +50,25 @@
 
 <body style="background-color:white;"> 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">TechConnect</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="community.html">Non-Profit Application</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="communitylist.html">Non-Profit Listings</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="aboutus.html">About Us</a>
-                    </li>
-                  </ul>
-                </div>
-            </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">TechConnect</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="community.html">Organization Application</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="communitylist.html">Job Listings</a>
+                </li>
+            </ul>
+        </div>
+</nav>
         
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
@@ -121,20 +118,102 @@ function findObject(collectionRef){
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
             var cell4 = row.insertCell(3);
-            var cell5 = row.insertCell(4);
             cell1.innerHTML= (+counter + 1);
             cell2.innerHTML=objectData[counter].Name;
             cell3.innerHTML=objectData[counter].Email;
             cell4.innerHTML=objectData[counter].JobDescription;}
-            
     })
 }
-
 //createTable(findObject(collectionRef));
-
 var objectData = findObject(collectionRef);
-
 </script>
+
+<div style= "height: 15px;"></div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Apply!
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Job Application</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="EmailForm">
+            <div class="form-group row" style="margin: 10px 15px;">
+            <label for="Email" class="col-form-label">Organization's Email:</label>
+            <div class="col-form-label" style="margin: 0px 10px;">
+            <input type="email" class="form-control" id="ApplyEmail">
+            </div>
+            </div>
+
+            <div style= "height: 10px;"></div>
+
+            <div class="form-group row" style="margin: 10px 15px;">
+            <label for="exampleFormControlFile1">Cover Letter:</label>
+            <input type="file" class="form-control-file" id="ApplyCoverLetter">
+            </div>
+
+            <div style= "height: 10px;"></div>
+
+            <div class="form-group row" style="margin: 10px 15px;">
+            <label for="exampleFormControlFile1">Resume:</label>
+            <input type="file" class="form-control-file" id="ApplyResume">
+            </div>
+
+            <div style= "height: 10px;"></div>
+
+            <div class="form-group row" style="margin: 10px 15px;">
+            <label for="JobDescription" class="col-form-label">Other Information:</label>
+            <div class="col-form-label">
+            <textarea rows="4" cols="20" class="form-control" id="ApplyOtherInformation"></textarea>
+            <small id="JobHelp" class="form-text text-muted">Please mention any other information that you would aid your application.</small>
+            </div> 
+            </div>
+
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"onclick="myFunction2()">Send</button>
+      </div>
+
+    </form>
+    </div>
+  </div>
+</div>
+
+<script>
+    $('#ApplyForm').submit(function (e) {
+        e.preventDefault();
+        console.log("hello world");
+    })
+    function myFunction2(e) {
+        // e.preventDefault();
+        console.log("In my function");
+        
+db.collection("apply").add({
+    ApplyEmail: document.getElementById("ApplyEmail").value,
+    ApplyCoverLetter: document.getElementById("ApplyCoverLetter").value,
+    ApplyResume: document.getElementById("ApplyResume").value,
+    ApplyOtherInformation: document.getElementById("ApplyOtherInformation").value,
+})
+.then(function() {
+    console.log("Document successfully written!");
+})
+.catch(function(error) {
+    console.log("Error writing document: ", error);
+});
+console.log("After db call");
+    }
+</script>
+
  <!-- Bottom Navigation -->
  <div class="botNav">
         <center>
