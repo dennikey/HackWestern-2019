@@ -78,17 +78,32 @@
 </div>
 </div>
 
-<div class="dropdown" style="margin: 25px 65px;">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown button
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Website</a>
-          <a class="dropdown-item" href="#">iOS</a>
-          <a class="dropdown-item" href="#">Android</a>
-    </div>
-</div>
-
+<fieldset class="form-group" style="margin: 25px 65px;">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Work Required:</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="workType" value="Website">
+                  <label class="form-check-label" for="workType1">
+                    Website
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="workType" value="iOS">
+                  <label class="form-check-label" for="workType2">
+                    iOS
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="workType" value="Android">
+                  <label class="form-check-label" for="workType3">
+                    Android
+                  </label>
+                </div>
+            </div>
+        </div>
+</fieldset>
+    
 <div class="form-group row" style="margin: 25px 50px;">
     <label for="JobDescription" class="col-sm-2 col-form-label">Job Description:</label>
     <div class="col-sm-10">
@@ -105,7 +120,6 @@
 db.collection("test").doc("LA").set({
     Name: document.getElementById("Name").value,
     Email: document.getElementById("Email").value,
-    WorkRequired: document.getElementById("JobDescription").value,
     JobDescription: document.getElementById("JobDescription").value,
 })
 .then(function() {
