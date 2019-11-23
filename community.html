@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel = "stylesheet" href= "style.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>TechConnect</title>
+</head>
+
+<body style="background-color:orange;"> 
+
+<h1 style="text-align:center;"><b>Non-Profit Organization Information Page</b></h1>
+<p>Tell us a bit more about your non-profit organization, and we will host your requirements on !</p>
+
+<form>
+<div class="form-group row">
+    <label for="Name" class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-10">
+    <input type="name" class="form-control" id="Name">
+</div>
+</div>
+
+<div class="form-group row">
+    <label for="Email" class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-10">
+    <input type="email" class="form-control" id="Email">
+</div>
+</div>
+
+<fieldset class="form-group">
+    <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0">Work Required:</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="workType" id="workType1" value="Website">
+              <label class="form-check-label" for="workType1">
+                Website
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="workType" id="workType2" value="iOS">
+              <label class="form-check-label" for="workType2">
+                iOS
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="workType" id="workType3" value="Android">
+              <label class="form-check-label" for="workType3">
+                Android
+              </label>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+<div class="form-group row">
+    <label for="JobDescription" class="col-sm-2 col-form-label">Job Description:</label>
+    <div class="col-sm-10">
+    <input type="jobdescription" class="form-control" id="JobDescription">
+</div>
+    <small id="JobHelp" class="form-text text-muted">Please include all applicable information such as the salary, time frame, and more information about the software needed.</small>
+</div> 
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>
