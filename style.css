@@ -16,20 +16,11 @@
   }
 
 
-.carousel-control{
-    color:black;
-}
-
-.carousel-item{
+.carousel-piece{
     display: none;
 }
 
 
-
-.carousel{
-    position:relative;
-    margin:auto;
-}
 
 
 .next{
@@ -39,7 +30,7 @@
     top: 25%;
     width:auto;
     margin-top: -50px;
-    padding-top: 325px;
+    padding-top: 190px;
     color: black;
     font-weight: bold;
     font-size: 35px;
@@ -54,9 +45,8 @@
     position:absolute;
     top: 25%;
     margin-top: -50px;
-    padding-top: 325px;
+    padding-top: 190px;
     width:auto;
-
     color: black;
     font-weight: bold;
     font-size: 35px;
@@ -64,3 +54,38 @@
     border-radius: 0 3px 3px 0;
     user-select:none;
 }
+
+.slideShowContainer{
+    margin-top: 50px;
+    position:relative;
+    margin:auto;
+}
+
+.botNav{
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.botNav img{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Fading animation */
+.transition {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .8} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .8} 
+    to {opacity: 1}
+  }
