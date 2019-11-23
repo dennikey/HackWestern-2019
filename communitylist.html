@@ -27,18 +27,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
     <script>
-            // const firebase = require("firebase");
-            // Your web app's Firebase configuration
-            // var firebaseConfig = {
-            //   apiKey: "AIzaSyBjhEqttfyF5q1p01RsuWPuLEoHxdCsKeU",
-            //   authDomain: "techconnect-7edf5.firebaseapp.com",
-            //   databaseURL: "https://techconnect-7edf5.firebaseio.com",
-            //   projectId: "techconnect-7edf5",
-            //   storageBucket: "techconnect-7edf5.appspot.com",
-            //   messagingSenderId: "178336929495",
-            //   appId: "1:178336929495:web:2fa28bd8305572fbf48292",
-            //   measurementId: "G-57MT0VJ3D3"
-            // };
             var firebaseConfig = {
                 apiKey: "AIzaSyBjhEqttfyF5q1p01RsuWPuLEoHxdCsKeU",
                 authDomain: "techconnect-7edf5.firebaseapp.com",
@@ -89,13 +77,14 @@
     </div>
 </div>
 
+<div class="col px-md-5"><div class="p-3 border bg-light">
 <table class="table">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Name</th>
+            <th scope="col">Contact Information</th>
+            <th scope="col">Job Description</th>
           </tr>
         </thead>
         <tbody>
@@ -119,11 +108,11 @@
           </tr>
         </tbody>
 </table>
+</div>
 
 
 <script>
 var collectionRef = db.collection("test")
-
 function findObject(collectionRef){
     collectionRef.get({ source: "server" })
     .then(value => value.docs)
@@ -135,20 +124,16 @@ function findObject(collectionRef){
             var docRef = collectionRef.doc(docId);
             return docRef.get({ source: 'server' });
         });
-
         return Promise.all(docPromises);
     })
     .then((docObjs) => {
         var objectData = docObjs.map(doc => doc.data())
         console.log(objectData);
-
     })
 }
-
 //function createTable(objectData){
    // var table = 
 //}
-
 console.log(findObject(collectionRef))
 </script>
 
