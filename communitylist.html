@@ -122,15 +122,71 @@ function findObject(collectionRef){
             cell2.innerHTML=objectData[counter].Name;
             cell3.innerHTML=objectData[counter].Email;
             cell4.innerHTML=objectData[counter].JobDescription;}
-            
     })
 }
-
 //createTable(findObject(collectionRef));
-
 var objectData = findObject(collectionRef);
-
 </script>
+
+<div style= "height: 15px;"></div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Apply!
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Job Application</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="EmailForm">
+            <div class="form-group row" style="margin: 10px 15px;">
+            <label for="Email" class="col-form-label">Organization's Email:</label>
+            <div class="col-form-label" style="margin: 0px 10px;">
+            <input type="email" class="form-control" id="ApplyEmail">
+            </div>
+            </div>
+
+            <div style= "height: 10px;"></div>
+
+            <div class="form-group row" style="margin: 10px 15px;">
+            <label for="exampleFormControlFile1">Cover Letter:</label>
+            <input type="file" class="form-control-file" id="ApplyCoverLetter">
+            </div>
+
+            <div style= "height: 10px;"></div>
+
+            <div class="form-group row" style="margin: 10px 15px;">
+            <label for="exampleFormControlFile1">Resume:</label>
+            <input type="file" class="form-control-file" id="ApplyResume">
+            </div>
+
+            <div style= "height: 10px;"></div>
+
+            <div class="form-group row" style="margin: 10px 15px;">
+            <label for="JobDescription" class="col-form-label">Other Information:</label>
+            <div class="col-form-label">
+            <textarea rows="4" cols="20" class="form-control" id="ApplyOtherInformation"></textarea>
+            <small id="JobHelp" class="form-text text-muted">Please mention any other information that you would aid your application.</small>
+            </div> 
+            </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
  <!-- Bottom Navigation -->
  <div class="botNav">
         <center>
